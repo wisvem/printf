@@ -33,6 +33,10 @@ int _printf(const char *format, ...)
 					break;
 				}
 			}
+			if (op[j].type == '\0')
+			{
+				return (-1);
+			}
 		}
 		else
 		{
