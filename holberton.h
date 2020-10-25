@@ -3,16 +3,17 @@
 
 #include <stdarg.h>
 #include <stdio.h>
+#include <unistd.h>
 
 /**
 * struct print_st - print structure
-* @format: format or type
-* @f: right function to use
+* @type: format or type
+* @function: right function to use
 **/
 typedef struct print_st
 {
-	char *format;
-	int (*f)();
+	char type;
+	int (*function)();
 } print_t;
 int _printf(const char *format, ...);
 int print_char(va_list x);
@@ -20,5 +21,4 @@ int print_string(va_list x);
 int print_int(va_list x);
 int _strlen(char *);
 int _putchar(char c);
-int (*get_print_func(const char *format, va_list args, );
 #endif /* _HOLBERTON_H_ */

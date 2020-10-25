@@ -8,18 +8,32 @@
 int _printf(const char *format, ...)
 {
 	va_list elements;
-	int count = 0;
-	print_t prints[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{"d", print_int},
-		{"i", print_int},
-		{NULL, NULL}
+	int count = 0, i, j;
+	print_t op[] = {
+		{'c', print_char},
+		{'s', print_string},
+		{'\0', NULL}
 	};
+
 	if (format == NULL)
 		return (-1);
-	va_start(args, format);
-	count = get_print_function(format, prints, args);
-	va_end(args);
+	va_start(elements, format);
+	for (i = 0; format[i] != '\0' ; i++)
+	{
+		if (format[i] == '%')
+		{
+			for (j = 0; op[j].type != '\0'; j++)
+			{
+				if (format[i + 1] == op[j].type)
+				{
+					count = count + op[j].function(elements);
+					break;
+				}
+			}
+		}
+		write (1, &format[i], 1);
+		count++;
+	}
+	va_end(elements);
 	return (count);
 }
