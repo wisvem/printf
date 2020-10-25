@@ -26,7 +26,7 @@ int print_string(va_list s)
 
 	str = va_arg(s, char*);
 	if (str == NULL)
-		str = "\0";
+		str = "ERROR";
 	for (count = 0; str[count]; count++)
 	{
 		write(1, &str[count], 1);
