@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 	for (i = 0; format[i] != '\0' ; i++)
 	{
 		j = 0;
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1] != '%')
 		{
 			i++;
 			for (j = 0; op[j].type != '\0'; j++)
@@ -34,9 +34,13 @@ int _printf(const char *format, ...)
 				}
 			}
 			if (op[j].type == '\0')
-			{
 				return (-1);
-			}
+		}
+		else if (format[i] == '%' && format[i + 1] == '%')
+		{
+			print_perc();
+			count++;
+			i++;
 		}
 		else
 		{
