@@ -36,10 +36,8 @@ int print_string(va_list s)
 /**
 * print_perc
 **/
-int print_perc(va_list c)
+int print_perc(void)
 {
-	char p = va_arg(c, int);
-
-	write(1, &p, 1);
+	write(1, "%", 1);
 	return (1);
 }
