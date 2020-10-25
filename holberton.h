@@ -4,7 +4,8 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>
-
+#include <stdlib.h>
+#include <stddef.h>
 /**
 * struct print_st - print structure
 * @type: format or type
