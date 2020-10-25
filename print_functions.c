@@ -32,3 +32,14 @@ int print_string(va_list s)
 	}
 	return (count);
 }
+
+/**
+* print_perc
+**/
+int print_perc(va_list c)
+{
+	char p = va_arg(c, int);
+
+	write(1, &p, 1);
+	return (1);
+}

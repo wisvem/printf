@@ -12,6 +12,7 @@ int _printf(const char *format, ...)
 	print_t op[] = {
 		{'c', print_char},
 		{'s', print_string},
+		{'%', print_perc},
 		{'\0', NULL}
 	};
 
