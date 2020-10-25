@@ -28,7 +28,7 @@ int print_string(va_list s)
 	for (count = 0; str[count]; count++)
 	{
 		write(1, &str[count], 1);
-	}
+	} 
 	return (count);
 }
 
