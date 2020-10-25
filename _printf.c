@@ -24,9 +24,9 @@ int _printf(const char *format, ...)
 		j = 0;
 		if (format[i] == '%')
 		{
+			i++;
 			for (j = 0; op[j].type != '\0'; j++)
 			{
-				i++;
 				if (format[i] == op[j].type)
 				{
 					count = count + op[j].function(elements);
