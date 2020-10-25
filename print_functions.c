@@ -24,7 +24,7 @@ int print_string(va_list s)
 {
 	int count;
 	char *str;
-	
+
 	str = va_arg(s, char*);
 	for (count = 0; str[count]; count++)
 	{
