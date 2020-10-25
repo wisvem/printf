@@ -34,7 +34,8 @@ int print_string(va_list s)
 }
 
 /**
-* print_perc
+* print_perc - print percentage
+* Return: 1
 **/
 int print_perc(void)
 {
