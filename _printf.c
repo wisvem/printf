@@ -20,18 +20,23 @@ int _printf(const char *format, ...)
 	va_start(elements, format);
 	for (i = 0; format[i] != '\0' ; i++)
 	{
+		j = 0;
 		if (format[i] == '%')
 		{
 			for (j = 0; op[j].type != '\0'; j++)
 			{
-				if (format[i + 1] == op[j].type)
+				i++;
+				if (format[i] == op[j].type)
 				{
 					count = count + op[j].function(elements);
 					break;
 				}
 			}
 		}
-		write (1, &format[i], 1);
+		else
+		{
+			write (1, &format[i], 1);
+		}
 		count++;
 	}
 	va_end(elements);

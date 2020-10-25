@@ -9,7 +9,9 @@
 **/
 int print_char(va_list c)
 {
-	write(1, &c, 1);
+	char x = va_arg(c, int);
+
+	write(1, &x, 1);
 	return (1);
 }
 
@@ -21,9 +23,12 @@ int print_char(va_list c)
 int print_string(va_list s)
 {
 	int count;
-	char *str = va_arg(s, char*);
-
+	char *str;
+	
+	str = va_arg(s, char*);
 	for (count = 0; str[count]; count++)
-	{}
-	return (write(1, &str, count));
+	{
+		write(1, &str[count], 1);
+	}
+	return (count);
 }
