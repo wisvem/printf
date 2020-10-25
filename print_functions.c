@@ -9,7 +9,7 @@
 int print_char(va_list c)
 {
 	char x = va_arg(c, int);
-	
+
 	write(1, &x, 1);
 	return (1);
 }
@@ -26,7 +26,7 @@ int print_string(va_list s)
 
 	str = va_arg(s, char*);
 	if (str == NULL)
-		return (0);
+		str = "\0";
 	for (count = 0; str[count]; count++)
 	{
 		write(1, &str[count], 1);
