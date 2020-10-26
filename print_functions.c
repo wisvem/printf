@@ -102,6 +102,17 @@ int print_bin(va_list n)
 {
 	int x = va_arg(n, int), res, i, count = 0;
 
+	if (x == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+	if (x < 0)
+	{
+		x = -x;
+		count++;
+		_putchar('-');
+	}
 	for (i = 0; x > 0; i++)
 	{
 		res = x % 2;
