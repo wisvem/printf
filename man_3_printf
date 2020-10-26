@@ -24,3 +24,21 @@ directives: ordinary characters which are copied unchanged to
 the output stream; and conversion specifications, each of which results in 
 fetching zero or more subsequent arguments. 
 
+OPTIONS
+
+_putchar. On a loop
+
+SEE ALSO
+
+(_putchar)
+(write)
+(stdio.h)
+(stdlib.h)
+
+BUGS
+
+No known BUGS
+
+AUTHOR
+
+Wiston Venera/ Nicolas Gonzalez Delgado
