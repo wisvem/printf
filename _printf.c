@@ -16,17 +16,26 @@ int _printf(const char *format, ...)
 	va_start(elements, format);
 	for (i = 0; format[i] != '\0' ; i++)
 	{
-		if (format[i] == '%' && format[i + 1] != '%')
+		if (format[i] == '%')
 		{
-			f = get_print(format[i + 1]);
-			if (f == NULL)
+			if (format[i + 1] != '%')
 			{
-				write(1, &format[i], 1);
-				count++;
+				f = get_print(format[i + 1]);
+				if (f == NULL)
+				{
+					write(1, &format[i], 1);
+					count++;
+				}
+				else
+				{
+					count = count + f(elements);
+					i++;
+				}
 			}
 			else
 			{
-				count = count + f(elements);
+				write(1, &format[i], 1);
+				count++;
 				i++;
 			}
 		}
@@ -34,7 +43,6 @@ int _printf(const char *format, ...)
 		{
 			write(1, &format[i], 1);
 			count++;
-			i++;
 		}
 	}
 	va_end(elements);
