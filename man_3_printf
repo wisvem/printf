@@ -11,7 +11,7 @@ facilities of stdarg) are converted for output.
 
 Return value
 
-Upon successful return, \fB_printf()\fR returns the number of characters 
+Upon successful return,  returns the number of characters 
 printed (excluding the null byte used to end output to strings).
 
 If an output error is encountered, -1 is returned.
