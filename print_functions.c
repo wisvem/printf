@@ -51,7 +51,7 @@ int print_perc(void)
 **/
 int print_int(va_list x)
 {
-	int i = 1, j, divi = 1, n = va_arg(x, int);
+	int i = 1, j, divi = 1, n = va_arg(x, int), nn = 0;
 	unsigned int m = n;
 	unsigned int bck = n;
 
@@ -60,6 +60,7 @@ int print_int(va_list x)
 	else if (n < 0 && n >= -9)
 	{
 		n = -n;
+		i++;
 		_putchar('-');
 		_putchar('0' + n);
 	}
@@ -67,7 +68,7 @@ int print_int(va_list x)
 	{
 		if (n <= -10)
 		{
-			n = -n;
+			n = -n, nn = 1;
 			_putchar('-');
 			bck = n;
 			m = n;
@@ -87,5 +88,7 @@ int print_int(va_list x)
 			_putchar('0' + m);
 		}
 	}
+	if (nn == 1)
+		return (i + 1);
 	return (i);
 }
