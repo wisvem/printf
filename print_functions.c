@@ -95,12 +95,14 @@ int print_int(va_list x)
 
 /**
 * print_bin - print number to binary
-* @x: number to print
+* @n: number to print
 * Return: number of bytes printed
 **/
 int print_bin(va_list n)
 {
 	int x = va_arg(n, int), res, i, count = 0;
+	char *ptr;
+	int j, y = x;
 
 	if (x == 0)
 	{
@@ -113,12 +115,22 @@ int print_bin(va_list n)
 		count++;
 		_putchar('-');
 	}
+	for (j = 0; y > 0; j++)
+		y = y / 2;
+	ptr = malloc(sizeof(char) * j);
+	if (ptr == NULL)
+		return (-1);
 	for (i = 0; x > 0; i++)
 	{
 		res = x % 2;
 		x = x / 2;
-		_putchar('0' + res);
+		ptr[i] = res;
 		count++;
 	}
+	for (; i > 0; i--)
+	{
+		_putchar('0' + ptr[i - 1]);
+	}
+	free(ptr);
 	return (count);
 }
