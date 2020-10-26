@@ -18,8 +18,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%' && format[i + 1] != '%')
 		{
-			i++;
-			f = get_print(format[i]);
+			f = get_print(format[i + 1]);
 			if (f == NULL)
 			{
 				write(1, &format[i], 1);
@@ -28,8 +27,8 @@ int _printf(const char *format, ...)
 			else
 			{
 				count = count + f(elements);
+				i++;
 			}
-
 		}
 		else
 		{
