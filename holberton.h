@@ -23,5 +23,5 @@ int print_int(va_list x);
 int _strlen(char *);
 int _putchar(char c);
 int print_perc(void);
-int (get_print_function(const char type)(va_list))
+int (*get_print(char type))(va_list);
 #endif /* _HOLBERTON_H_ */

@@ -8,14 +8,10 @@
 int _printf(const char *format, ...)
 {
 	va_list elements;
+	int (*f)(va_list);
 	int count = 0, i;
-	print_t op[] = {
-		{'c', print_char},
-		{'s', print_string},
-		{'\0', NULL}
-	};
 
-	if (format == NULL)
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	va_start(elements, format);
 	for (i = 0; format[i] != '\0' ; i++)
@@ -23,7 +19,17 @@ int _printf(const char *format, ...)
 		if (format[i] == '%' && format[i + 1] != '%')
 		{
 			i++;
-			count = count + get_print_function(format[i]);
+			f = get_print(format[i]);
+			if (f == NULL)
+			{
+				write(1, &format[i], 1);
+				count++;
+			}
+			else
+			{
+				count = count + f(elements);
+			}
+
 		}
 		else if (format[i] == '%' && format[i + 1] == '%')
 		{
