@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 		{
 			print_perc();
 			count++;
-			i++;
+			i = i + 2;
 		}
 		else
 		{
