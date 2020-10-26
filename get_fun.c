@@ -11,6 +11,8 @@ int (*get_print(char tipo))(va_list)
 	print_t op[] = {
 		{'c', print_char},
 		{'s', print_string},
+		{'d', print_int},
+		{'i', print_int},
 		{'\0', NULL}
 	};
 
