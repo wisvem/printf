@@ -8,7 +8,7 @@
 int _printf(const char *format, ...)
 {
 	va_list elements;
-	int count = 0, i, j;
+	int count = 0, i;
 	print_t op[] = {
 		{'c', print_char},
 		{'s', print_string},
@@ -20,20 +20,10 @@ int _printf(const char *format, ...)
 	va_start(elements, format);
 	for (i = 0; format[i] != '\0' ; i++)
 	{
-		j = 0;
 		if (format[i] == '%' && format[i + 1] != '%')
 		{
 			i++;
-			for (j = 0; op[j].type != '\0'; j++)
-			{
-				if (format[i] == op[j].type)
-				{
-					count = count + op[j].function(elements);
-					break;
-				}
-			}
-			if (op[j].type == '\0')
-				return (-1);
+			count = count + get_print_function(format[i]);
 		}
 		else if (format[i] == '%' && format[i + 1] == '%')
 		{
