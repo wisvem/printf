@@ -92,3 +92,22 @@ int print_int(va_list x)
 		return (i + 1);
 	return (i);
 }
+
+/**
+* print_bin - print number to binary
+* @x: number to print
+* Return: number of bytes printed
+**/
+int print_bin(va_list n)
+{
+	int x = va_arg(n, int), res, i, count = 0;
+
+	for (i = 0; x > 0; i++)
+	{
+		res = x % 2;
+		x = x / 2;
+		_putchar('0' + res);
+		count++;
+	}
+	return (count);
+}
