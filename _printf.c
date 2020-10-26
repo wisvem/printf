@@ -31,12 +31,6 @@ int _printf(const char *format, ...)
 			}
 
 		}
-		else if (format[i] == '%' && format[i + 1] == '%')
-		{
-			print_perc();
-			count++;
-			i++;
-		}
 		else
 		{
 			write(1, &format[i], 1);

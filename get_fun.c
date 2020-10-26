@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
-* get_print_function - get the correct function
+* get_print - get the correct function
 * @tipo: format specifier
 * Return: pointer to the correct function
 **/
