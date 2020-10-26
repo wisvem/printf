@@ -100,21 +100,24 @@ int print_int(va_list x)
 **/
 int print_bin(va_list n)
 {
-	int x = va_arg(n, int), res, i, count = 0;
+	unsigned int x = va_arg(n, int);
+	int res, i, j, count = 0;
 	char *ptr;
-	int j, y = x;
+	unsigned int  y = x;
 
-	if (x == 0)
+	if (x < 1)
 	{
-		_putchar('0');
+		_putchar('0' + 0);
 		return (1);
 	}
-	if (x < 0)
-	{
-		x = -x;
-		count++;
-		_putchar('-');
-	}
+/*
+*	if (x < 0)
+*	{
+*		x = -x;
+*		count++;
+*		_putchar('-');
+*	}
+*/
 	for (j = 0; y > 0; j++)
 		y = y / 2;
 	ptr = malloc(sizeof(char) * j);
