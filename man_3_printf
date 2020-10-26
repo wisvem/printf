@@ -4,8 +4,8 @@ SYNOPSIS
 int printf(const char *\fIformat\fB, ...);
 
 DESCRIPTION
-The function \fB_printf()\fR writes output to \fIstdout\fR, the standard 
-output. The function writes under the control of a \fIformat\fR string that 
+The function \fB_printf()\fR writes output to , the standard 
+output. The function writes under the control of a string that 
 specifies how subsequent arguments (accessed via the variable-length argument 
 facilities of stdarg) are converted for output.
 
