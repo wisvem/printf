@@ -1,10 +1,10 @@
 SYNOPSIS
 #include "holberton.h"
 
-int printf(const char *\fIformat\fB, ...);
+int printf(const char *format, ...);
 
 DESCRIPTION
-The function \fB_printf()\fR writes output to , the standard 
+The function _printf() writes output to , the standard 
 output. The function writes under the control of a string that 
 specifies how subsequent arguments (accessed via the variable-length argument 
 facilities of stdarg) are converted for output.
