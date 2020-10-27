@@ -154,4 +154,3 @@ int print_HEX(va_list n)
 	free(ptr);
 	return (count);
 }
-

@@ -18,6 +18,7 @@ int (*get_print(char tipo))(va_list)
 		{'o', print_oct},
 		{'x', print_hex},
 		{'X', print_HEX},
+		{'R', rot13},
 		{'\0', NULL}
 	};
 

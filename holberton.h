@@ -28,5 +28,6 @@ int print_u(va_list x);
 int print_oct(va_list n);
 int print_hex(va_list n);
 int print_HEX(va_list n);
+int rot13(va_list x);
 int (*get_print(char type))(va_list);
 #endif /* _HOLBERTON_H_ */
