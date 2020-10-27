@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 	va_list elements;
 	int (*f)(va_list);
 	int count = 0, i;
-/*printf("%c ,hola '\0'", c(H))*/
+
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	va_start(elements, format);
@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 		{
 			if (format[i + 1] != '%')
 			{
-				/* PRINTCHAR*/f = get_print(format[i + 1]);
+				f = get_print(format[i + 1]);
 				if (f == NULL)
 				{
 					write(1, &format[i], 1);
