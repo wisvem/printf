@@ -19,6 +19,7 @@ int (*get_print(char tipo))(va_list)
 		{'x', print_hex},
 		{'X', print_HEX},
 		{'R', rot13},
+		{'r', rev_string},
 		{'\0', NULL}
 	};
 
