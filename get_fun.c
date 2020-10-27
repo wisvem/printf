@@ -14,6 +14,7 @@ int (*get_print(char tipo))(va_list)
 		{'d', print_int},
 		{'i', print_int},
 		{'b', print_bin},
+		{'u', print_u},
 		{'\0', NULL}
 	};
 

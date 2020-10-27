@@ -110,14 +110,6 @@ int print_bin(va_list n)
 		_putchar('0' + 0);
 		return (1);
 	}
-/*
-*	if (x < 0)
-*	{
-*		x = -x;
-*		count++;
-*		_putchar('-');
-*	}
-*/
 	for (j = 0; y > 0; j++)
 		y = y / 2;
 	ptr = malloc(sizeof(char) * j);
