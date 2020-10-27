@@ -1,45 +1,169 @@
-.SH SYNOPSIS
-.B #include "holberton.h"
+." Process this file with
+." groff -man -Tascii test_script.1
+."
+.TH _PRINTF "1" "October 2020" "Holberton School CH13" "User Commands"
 
-.B int printf(const char *format, ...);
+.SH NAME
+.B _printf
+- format and print data
+
+.SH SYNOPSIS
+.B _printf
+\fIFORMAT \fR[\fIARGUMENT\fR] \fR[...\fR]
+.br
 
 .SH DESCRIPTION
-The function _printf() writes output to , the standard 
-output. The function writes under the control of a string that 
-specifies how subsequent arguments (accessed via the variable-length argument 
-facilities of stdarg) are converted for output.
+.PP
+Print ARGUMENT(s) according to FORMAT
 
-.B Return value
-.in
-Upon successful return,  returns the number of characters 
-printed (excluding the null byte used to end output to strings).
+.TP
+.B 
+FORMAT identifies a value after his invocation \fR[\fI%\fR[\fIformater\fR]\fR] 
+.TP
+.B
+These \fIformater\fR especifies the output way of a variable or the same FORMAT argument string: 
 
-If an output error is encountered, -1 is returned.
-.in
+.TP
+.B
+% - c
+Write in the output console a int argument converted to an unsigned char
 
-.B Format of the format string
-.in
-The format string is a constant character string composed of zero or more 
-directives: ordinary characters which are copied unchanged to 
-the output stream; and conversion specifications, each of which results in 
-fetching zero or more subsequent arguments. 
-.in
-.B OPTIONS
-.in
-_putchar. On a loop
-.in
-.SH SEE ALSO
+.TP
+.B
+% - s
+The \fIconst char *\fR argument is expected to be a pointer to an array of character type(pointer to an string). Characters from the array are written up to
 
-printf()
-(_putchar())
-(write())
-(stdio.h)
-(stdlib.h)
+.TP
+.B
+% - %
+If after the \fIFORMAT\fR is another '%' the function just print the percent in the output console
 
-.B BUGS
-.in
-No known BUGS
-.in
+
+
+.SH OBJECT
+
+.PP
+The function 
+.B
+_printf 
+uses a base structure to define the sub-function to execute after a coincidence in the \fIformater\fR identifier 
+
+.PP
+Grapic representation of the primary structure defining the 
+.I
+formater 
+and his function
+
+
+.RS 1.0i
+
+.TS
+tab(@), left, box;
+cB
+cB | c
+r | l.
+STRUCTURE
+_
+formater@Function to use
+_
+Char let @ Int (*f)()
+.TE
+.RE
+
+
+.RS 0.2i
+
+.TS
+tab (@);
+c c c.
+formater@Function@Comment
+_
+T{
+\(aqc\(aq
+T}@int print_char(va_list c)@First commit @
+T{
+\(aqs\(aq
+T}@int print_string(va_list s)@First commit
+T{
+\(aqd\(aq
+T}@team3_value1, team3_value2@Second commit
+T{
+\(aqi\(aq
+T}@team4_value1, team4_value2@Second commit
+.TE
+
+.TP
+
+.TP
+.RE
+.PP
+
+The \fBformater\fP, identifies the "char[x]" after the universal \fBFORMAT(%)\fP, passed to analize and execute the function with the list of arguments passed by (va_list) 
+
 .SH AUTHOR
+.PP
+Written by Jose N. Soler
 
-Wiston Venera/ Nicolas Gonzalez Delgado
+
+.SH REPORTING BUGS
+.PP
+For reporting troubleshoots executing the program with edge cases or memory leak information, please reffer to someone of the colaborators in this project, or be free to send us a mail to cisfun.com
+
+.PP
+ 
+
+.SH EXIT STATUS
+.TP
+.B
+t
+Size of bytes used on execution 
+
+.TP
+.B
+-1
+\fIFORMAT\fP argument is NULL or empty, execution error
+
+
+.SH SEE ALSO
+.BR https://www.holberton.com
+.PP
+.B Full project documentation based on a project to emulate a copy of printf with formater specifiers
+
+
+.SH COPYRIGHT
+.PP
+Copyright 2020 HolbertonSchool. CH13.
+.PP 
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+https://www.cisfun.com
+
+
+.SH CREDITS
+.PP
+Holberton School - Cohort 13
+.TP
+Project _printf by:
+
+.PP
+.B
+-https://www.github.com/cnicogd
+
+.PP
+.B
+-https://www.github.com/wisvem
+
+.PP
+.B
+-Edher Ramirez
+.SH
+.PP
+
