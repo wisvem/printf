@@ -20,7 +20,8 @@ int print_p(va_list x)
 
 	if (!n)
 	{
-		return (-1);
+		write(1, "(nil)", 5);
+		return (5);
 	}
 
 	_putchar('0');
