@@ -18,7 +18,7 @@ int print_p(va_list x)
 
 	n = va_arg(x, unsigned long int);
 
-	if (n == NULL)
+	if (!n)
 	{
 		return (-1);
 	}
