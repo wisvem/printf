@@ -179,8 +179,7 @@ int print_S(va_list s)
 			if (aux > 0 && aux < 16)
 			{
 				_putchar('0');
-				count++;
-				
+				count++;	
 			}
 			count = count + print_X(aux);
 		}
