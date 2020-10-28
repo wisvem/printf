@@ -168,8 +168,7 @@ int print_S(va_list s)
 	str = va_arg(s, char*);
 	if (str == NULL)
 	{
-		str = "(null)";
-		return (-1);
+		return (write(1, "(null)", 6));
 	}
 	for (i = 0; str[i]; i++)
 	{
