@@ -177,6 +177,7 @@ int print_S(va_list s)
 			_putchar('0');
 			aux = str[i];
 			print_X(aux);
+			count = count + 2;
 		}
 		else
 		{
