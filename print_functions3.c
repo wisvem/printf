@@ -17,12 +17,13 @@ int print_p(va_list x)
 	int count = 0;
 
 	n = va_arg(x, unsigned long int);
-
+/*
 	if (n == 0)
 	{
 		write(1, "(1)", 3);
 		return (0);
 	}
+*/
 	_putchar('0');
 	_putchar('x');
 	count = count + print_x(n) + 2;
