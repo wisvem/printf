@@ -116,7 +116,7 @@ int print_hex(va_list n)
 }
 
 /**
-* print_HEX - print number to hexa lower
+* print_HEX - print number to hexa upper
 * @n: number to print
 * Return: number of bytes printed
 **/
@@ -152,5 +152,37 @@ int print_HEX(va_list n)
 		_putchar('0' + ptr[i - 1]);
 	}
 	free(ptr);
+	return (count);
+}
+
+/**
+* print_S - print non printable characters
+* @s: string
+* Return: bytes printed
+**/
+int print_S(va_list s)
+{
+	unsigned int i, count = 0, aux;
+	char *str;
+
+	str = va_arg(s, char*);
+	if (str == NULL)
+		str = "(null)";
+	for (i = 0; str[i]; i++)
+	{
+		if (str[i] > 0 && (str[i] < 32 || str[i] >= 127))
+		{
+			_putchar('\\');
+			_putchar('x');
+			_putchar('0');
+			aux = str[i];
+			print_X(aux);
+		}
+		else
+		{
+			_putchar(str[i]);
+		}
+		count++;
+	}
 	return (count);
 }
