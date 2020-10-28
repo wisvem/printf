@@ -170,18 +170,19 @@ int print_S(va_list s)
 		str = "(null)";
 	for (i = 0; str[i]; i++)
 	{
-		if ((str[i] > 0 && str[i] < 32) || str[i] >= 127)
+		if (str[i] < 32 || str[i] >= 127)
 		{
 			aux = str[i];
 			_putchar('\\');
 			_putchar('x');
+			count = count + 2;
 			if (aux > 0 && aux < 16)
 			{
 				_putchar('0');
 				count++;
+				
 			}
-			print_X(aux);
-			count = count + 3;
+			count = count + print_X(aux);
 		}
 		else
 		{
